@@ -1,0 +1,8 @@
+{
+    "name": "pxgamer/ledger-php",
+    "description": "A PHP interface for the Ledger Wallet API.",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {}
+}
