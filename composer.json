@@ -4,5 +4,12 @@
     "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^6.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "pxgamer\\Ledger\\": "src/"
+        }
+    }
 }
