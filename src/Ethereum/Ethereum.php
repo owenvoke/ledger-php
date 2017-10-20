@@ -2,13 +2,20 @@
 
 namespace pxgamer\Ledger\Ethereum;
 
+use pxgamer\Ledger\Connector;
+
 /**
- * Trait Ethereum
+ * Class Ethereum
  */
-trait Ethereum
+class Ethereum extends Connector
 {
-    /**
-     * @var string
-     */
     protected $tokenType = 'eth';
+
+    /**
+     * @return string
+     */
+    protected function getTokenType()
+    {
+        return $this->tokenType;
+    }
 }
