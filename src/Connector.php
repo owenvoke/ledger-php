@@ -25,7 +25,7 @@ class Connector
     public function __construct()
     {
         $this->client = new Client([
-            'base_url' => 'https://api.ledgerwallet.com/blockchain/v2/' . $this->tokenType
+            'base_uri' => 'https://api.ledgerwallet.com/blockchain/v2/' . $this->tokenType . '/'
         ]);
     }
 }
