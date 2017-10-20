@@ -5,7 +5,7 @@ namespace pxgamer\Ledger\Ethereum;
 use pxgamer\Ledger\Exceptions\InvalidGasPriceException;
 
 /**
- * Class Block
+ * Class Transaction
  */
 class Transaction extends Ethereum
 {
