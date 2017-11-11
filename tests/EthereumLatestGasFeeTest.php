@@ -1,27 +1,31 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-use pxgamer\Ledger\Ethereum\Transaction;
+namespace pxgamer\Ledger;
 
+use PHPUnit\Framework\TestCase;
+
+/**
+ * Class EthereumLatestGasFeeTest
+ */
 class EthereumLatestGasFeeTest extends TestCase
 {
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCanGetLatestGasFee()
     {
-        $gasPrice = (new Transaction)->getCurrentFee();
+        $gasPrice = (new Ethereum\Transaction())->getCurrentFee();
 
         $this->assertInternalType('float', $gasPrice);
         $this->assertTrue($gasPrice > 0);
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCanGetCachedGasFee()
     {
-        $gasPrice = (new Transaction)->getCurrentFee();
+        $gasPrice = (new Ethereum\Transaction())->getCurrentFee();
 
         $this->assertInternalType('float', $gasPrice);
         $this->assertTrue($gasPrice > 0);
