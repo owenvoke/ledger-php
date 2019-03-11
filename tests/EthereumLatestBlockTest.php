@@ -5,15 +5,10 @@ namespace pxgamer\Ledger;
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class EthereumLatestBlockTest
- */
 class EthereumLatestBlockTest extends TestCase
 {
-    /**
-     * @throws \Exception
-     */
-    public function testCanGetLatestBlock()
+    /** @throws \Exception */
+    public function testCanGetLatestBlock(): void
     {
         $block = (new Ethereum\Block())->getLatestBlock();
 
