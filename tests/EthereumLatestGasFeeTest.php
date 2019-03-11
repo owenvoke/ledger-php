@@ -11,16 +11,17 @@ class EthereumLatestGasFeeTest extends TestCase
     {
         $gasPrice = (new Ethereum\Transaction())->getCurrentFee();
 
-        $this->assertInternalType('float', $gasPrice);
-        $this->assertTrue($gasPrice > 0);
+        $this->assertIsFloat($gasPrice);
+        $this->assertGreaterThan(0, $gasPrice);
     }
 
     /** @throws \Exception */
     public function testCanGetCachedGasFee(): void
     {
-        $gasPrice = (new Ethereum\Transaction())->getCurrentFee();
+        (new Ethereum\Transaction())->getCurrentFee();
+        $gasPrice = (new Ethereum\Transaction())->getCachedFee();
 
-        $this->assertInternalType('float', $gasPrice);
-        $this->assertTrue($gasPrice > 0);
+        $this->assertIsFloat($gasPrice);
+        $this->assertGreaterThan(0, $gasPrice);
     }
 }

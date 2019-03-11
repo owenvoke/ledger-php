@@ -2,6 +2,7 @@
 
 namespace pxgamer\Ledger;
 
+use DateTime;
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +16,7 @@ class EthereumLatestBlockTest extends TestCase
         $this->assertInstanceOf(Ethereum\Block::class, $block);
         $this->assertInstanceOf(Collection::class, $block->transactions());
         $this->assertRegExp('/0x[a-z0-9]{64}/', $block->hash());
-        $this->assertTrue($block->height() > 0);
-        $this->assertInstanceOf(\DateTime::class, $block->date());
+        $this->assertGreaterThan(0, $block->height());
+        $this->assertInstanceOf(DateTime::class, $block->date());
     }
 }

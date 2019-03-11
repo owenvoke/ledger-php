@@ -53,7 +53,7 @@ class Transaction extends Ethereum
     private function setGasFee($gasPrice)
     {
         if (is_float($gasPrice)) {
-            return $this->gasPrice = $gasPrice;
+            return $this->gasPrice = (float)$gasPrice;
         }
 
         throw new InvalidGasPriceException();
