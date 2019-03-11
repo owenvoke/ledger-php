@@ -4,24 +4,14 @@ namespace pxgamer\Ledger;
 
 use GuzzleHttp\Client;
 
-/**
- * Class Connector
- */
 class Connector
 {
-    /**
-     * @var Client
-     */
+    /** @var Client */
     protected $client;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     protected $tokenType;
 
-    /**
-     * Connector constructor.
-     */
     public function __construct()
     {
         $this->client = new Client([
