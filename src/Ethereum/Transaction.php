@@ -1,17 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace pxgamer\Ledger\Ethereum;
 
 use pxgamer\Ledger\Exceptions\InvalidGasPriceException;
 
-/**
- * Class Transaction
- */
 class Transaction extends Ethereum
 {
-    /**
-     * @var int
-     */
+    /** @var float */
     protected $gasPrice;
 
     /**
@@ -19,7 +16,7 @@ class Transaction extends Ethereum
      *
      * @throws \Exception
      */
-    public function getCurrentFee()
+    public function getCurrentFee(): float
     {
         $currentBlock = $this->client->get('fees');
 
@@ -33,10 +30,10 @@ class Transaction extends Ethereum
     /**
      * Return the latest cached Gas fee or falls back to current fee
      *
-     * @return int
+     * @return float
      * @throws \Exception
      */
-    public function getCachedFee()
+    public function getCachedFee(): float
     {
         if ($this->gasPrice) {
             return $this->gasPrice;
@@ -46,14 +43,14 @@ class Transaction extends Ethereum
     }
 
     /**
-     * @param string $gasPrice
-     * @return mixed
+     * @param float $gasPrice
+     * @return float
      * @throws InvalidGasPriceException
      */
-    private function setGasFee($gasPrice)
+    private function setGasFee(?float $gasPrice): float
     {
         if (is_float($gasPrice)) {
-            return $this->gasPrice = $gasPrice;
+            return $this->gasPrice = (float)$gasPrice;
         }
 
         throw new InvalidGasPriceException();
