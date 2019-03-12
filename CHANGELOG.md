@@ -2,21 +2,8 @@
 
 All notable changes to `ledger-php` will be documented in this file.
 
-Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
+Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) principles.
 
-## NEXT - YYYY-MM-DD
+## [Unreleased]
 
-### Added
-- Nothing
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
+[Unreleased]: https://github.com/pxgamer/ledger-php/compare/master...develop
